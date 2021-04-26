@@ -13,39 +13,49 @@ class Canvas2DUtility {
         return this.context2d;
     }
 
-    drawRect(x,y,width,height,color){
+    drawRect(x, y, width, height, color) {
+        if (color != null) {
+            this.context2d.fillStyle = color;
+        }
+        this.context2d.fillRect(x, y, width, height);
+    }
+
+    drawLine(x1, y1, x2, y2, color, width = 1) {
+        if (color != null) {
+            this.context2d.strokeStyle = color;
+        }
+        this.context2d.lineWidth = width;
+        this.context2d.beginPath();
+        this.context2d.moveTo(x1, y1);
+        this.context2d.lineTo(x2, y2);
+        this.context2d.stroke();
+    }
+
+    drawPolygon(points, color) {
 
     }
 
-    drawLine(x1,y1,x2,y2,color,width=1){
+    drawCircle(x, y, radius, color) {
 
     }
 
-    drawPolygon(points,color){
+    drawFan(x, y, radius, startRadian, endRadian, color) {
 
     }
 
-    drawCircle(x,y,radius,color){
+    drawQuadraticBzier(x1, y1, x2, y2, cx, cy, color, width = 1) {
 
     }
 
-    drawFan(x,y,radius,startRadian,endRadian,color){
+    drawCubicBzier(x1, y1, x2, y2, cx1, cy1, cx2, cy2, color, width = 1) {
 
     }
 
-    drawQuadraticBzier(x1,y1,x2,y2,cx,cy,color,width=1){
+    drawText(text, x, y, color, width) {
 
     }
 
-    drawCubicBzier(x1,y1,x2,y2,cx1,cy1,cx2,cy2,color,width=1){
-
-    }
-
-    drawText(text,x,y,color,width){
-
-    }
-
-    imageLoader(path,callback) {
+    imageLoader(path, callback) {
 
     }
 }

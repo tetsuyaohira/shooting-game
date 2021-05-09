@@ -32,7 +32,19 @@ class Canvas2DUtility {
     }
 
     drawPolygon(points, color) {
-
+        if (Array.isArray(points) !== true || points.length < 6) {
+            return;
+        }
+        if (color != null) {
+            this.context2d.fillStype = color;
+        }
+        this.context2d.beginPath();
+        this.context2d.moveTo(points[0], points[1]);
+        for (let i = 2; i < points.length; i += 2) {
+            this.context2d.lineTo(points[i], points[1 + 1]);
+        }
+        this.context2d.closePath();
+        this.context2d.fill();
     }
 
     drawCircle(x, y, radius, color) {

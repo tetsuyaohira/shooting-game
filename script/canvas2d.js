@@ -48,11 +48,11 @@ class Canvas2DUtility {
     }
 
     drawCircle(x, y, radius, color) {
-        if(color!=null){
+        if (color != null) {
             this.context2d.fillStyle = color;
         }
         this.context2d.beginPath();
-        this.context2d.arc(x,y,radius,0.0,Math.PI*2.0);
+        this.context2d.arc(x, y, radius, 0.0, Math.PI * 2.0);
         this.context2d.closePath();
         this.context2d.fill();
     }

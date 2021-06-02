@@ -58,7 +58,14 @@ class Canvas2DUtility {
     }
 
     drawFan(x, y, radius, startRadian, endRadian, color) {
-
+        if (color != null) {
+            this.context2d.fillStype = color;
+        }
+        this.context2d.beginPath();
+        this.context2d.moveTo(x, y);
+        this.context2d.arc(x, y, radius, startRadian, endRadian);
+        this.context2d.closePath();
+        this.context2d.fill();
     }
 
     drawQuadraticBzier(x1, y1, x2, y2, cx, cy, color, width = 1) {
